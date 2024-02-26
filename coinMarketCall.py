@@ -56,6 +56,9 @@ def bitcoinLast360days():
         print('Erro ao fazer a solicitação HTTP:', r.status_code)
     return 
 
-bitcoin5years()
+def main():
+    bitcoin5years()
+    bitcoinLast360days()
+    return
 
-bitcoinLast360days()
+main()

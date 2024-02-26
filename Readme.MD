@@ -7,3 +7,13 @@
     Análise de dados: Crie gráficos que apresentem:
     O preço do Bitcoin nos últimos 5 anos. Utilize a figura 1 como exemplo.
     Gráfico do tipo candlestick nos últimos 30 dias do Bitcoin. Utilize a figura 2 como exemplo. 
+
+# Bibliotecas Python utilizadas
+   Instalação myenv para python
+   --
+   import requests
+   import datetime
+   import json
+   from pymongo import MongoClient
+   import pandas as pd
+   from pymongo import MongoClient
