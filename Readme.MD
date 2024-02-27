@@ -10,7 +10,7 @@
 
 # Bibliotecas Python utilizadas
    Instalação myenv para python
-   --
+   rodar o comando .\myenv\Scripts\activate
    import requests
    import datetime
    import json
