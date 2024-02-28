@@ -14,52 +14,54 @@ Gráfico do tipo candlestick nos últimos 30 dias do Bitcoin. Utilize a figura 2
    Para instalar e configurar o MongoDB em seu sistema, siga estas etapas gerais. As instruções específicas podem variar dependendo do sistema operacional que você está usando.
    1.1 Baixe o MongoDB:
    Ubuntu:
-      sudo apt update
-      sudo apt install mongodb
+     ```
+      sudo apt update ```
+      ``` sudo apt install mongodb ```
 
    CentOS:
-      sudo yum update
-      sudo yum install mongodb
+       ```sudo yum update ```
+       ```sudo yum install mongodb  ```
 
    macOS (com Homebrew):
-      brew tap mongodb/brew
-      brew install mongodb-community
+     ``` brew tap mongodb/brew  ```
+     ``` brew install mongodb-community  ```
 
    Windows:
-
-   Baixe o instalador do MongoDB do site oficial: MongoDB Download Center
-
-      1.2 Inicie o MongoDB:
-      Ubuntu / CentOS:
-
+   Baixe o instalador do MongoDB Community Center do site oficial:
+   https://www.mongodb.com/try/download/community
+   
+   1.2 Inicie o MongoDB:
+   Ubuntu / CentOS:
    O serviço deve ser iniciado automaticamente após a instalação. Você pode verificar o status com:
-      sudo systemctl status mongodb
+       ```sudo systemctl status mongodb ```
 
    macOS:
    Você pode iniciar o MongoDB com o comando:
-
-      brew services start mongodb-community
+    ```brew services start mongodb-community ```
 
    Windows:
-
    Depois de instalar o MongoDB, ele deve estar em C:\Program Files\MongoDB\Server\{version}\bin. Abra o prompt de comando como administrador e navegue até este diretório. Em seguida, execute:
+    ```mongod ``` 
 
-      mongod
-
-   Após executar o mongod, abrir o MongoDb Compass e conectar ao Localhost clicando em 'Save & Connect'
+   Após executar o mongod, abrir o MongoDB Compass e conectar ao Localhost clicando em 'Save & Connect'
+   
+   para testar a instalação do Mongo db, acessse: http://localhost:27017/
+   (caso configuração esteja no ambiente padrão)
 
    # 2 executar o ambiente
    Esse projeto contém as bibliotecas utilizadas já disponíveis na pasta myenv portanto deve funcionar sem a necessidade de realizar instalação dos módulos.
    Na raiz do projeto, executar:
-      .\myenv\Scripts\activate
+     ```.\myenv\Scripts\activate ```
 
    # 3 Executando o Projeto.
    3.1 Acessar a raiz do projeto e executar o Script "coinMarketCall.py".
-   Ao ser executado, ele guardará as informações dentro do MongoDB.
+   Ao ser executado, ele guardará as informações dentro do MongoDB:
+   ```$:> Informações adicionadas ao Collection bitcoin_data_last_5_years! - Verifique o seu MongoDB ```
+   ```$:> Informações adicionadas ao Collection bitcoin_data_last_360_days! - Verifique o seu MongoDB ```
 
    3.2 Gerando os gráficos
    Na pasta raiz do projeto, executar o comando: 
-      "jupyter notebook" 
+     ``` jupyter notebook  ```
    
    Depois acessar o arquivo "readMongodb.ipynb" que aparecerá na lista.
    No servidor do Jupyter, selecionar a opção "Run" e em seguida, "Run All Cells"
@@ -71,24 +73,25 @@ Todas as bibliotecas citadas abaixo já estão instaladas no diretório "myenv",
 após executar o ambiente myenv
 
 1 - Instalação myenv para python
-   rodar o comando .\myenv\Scripts\activate
+   rodar o comando 
+        ``` .\myenv\Scripts\activate     ``` 
 
 2 - realizar a instalação das bibliotecas: 
 Requests
-   pip install requests
+        ``` pip install requests``` 
 import datetime
-   pip install datetime
+       ```  pip install datetime``` 
 import json
-   pip install json
+        ``` pip install json``` 
 from pymongo import MongoClient
-   pip install MongoClient
+       ```  pip install MongoClient``` 
 import pandas as pd
-   pip install pandas
+        ``` pip install pandas``` 
 import pprint
-   pip install pprint
+        ``` pip install pprint``` 
 import matplotlib.pyplot as plt
-   pip install matplotlib
+        ``` pip install matplotlib``` 
 import mplfinance as mpf
-   pip install mplfinance
+        ``` pip install mplfinance``` 
 import mplcursors
-   pip install mplcursors
+       ```  pip install mplcursors``` 
