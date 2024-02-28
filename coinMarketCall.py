@@ -29,16 +29,16 @@ def bitcoin5years():
     return 
     
 
-def bitcoinLast360days():
-    print("bitcoinLast360days")
+def bitcoinLast30days():
+    print("bitcoinLast30days")
     data_atual = datetime.datetime.now()
     # Subtraia 1 ano da data atual
-    data_menos_1_ano = data_atual - datetime.timedelta(days=360)
+    data_menos_30_dias = data_atual - datetime.timedelta(days=30)
     # Formate a data no formato ISO 8601
-    data_formatada = data_menos_1_ano.replace(microsecond=0).isoformat()
+    data_formatada = data_menos_30_dias.replace(microsecond=0).isoformat()
     # Refatorar data atual para formato ISO 8601
     data_atual = datetime.datetime.now().replace(microsecond=0).isoformat()
-    request = f'https://rest.coinapi.io/v1/ohlcv/BITSTAMP_SPOT_BTC_USD/history?apikey=DC035A41-F1B1-4EF9-AD10-0349474586C3&period_id=1DAY&time_start={data_formatada}&limit=360&time_end={data_atual}'
+    request = f'https://rest.coinapi.io/v1/ohlcv/BITSTAMP_SPOT_BTC_USD/history?apikey=DC035A41-F1B1-4EF9-AD10-0349474586C3&period_id=1DAY&time_start={data_formatada}&limit=30&time_end={data_atual}'
     print(request)
     r = requests.get(request)
     #Validar se a requisição retorna 200
@@ -47,10 +47,10 @@ def bitcoinLast360days():
         # Conectando-se ao MongoDB
         client = MongoClient('localhost', 27017)
         db = client['coinmarketcap']
-        collection = db['bitcoin_data_last_360_days']
+        collection = db['bitcoin_data_last_30_days']
         # Inserindo o dicionário na coleção do MongoDB
         collection.insert_many(data_dict)
-        print("Informações adicionadas ao Collection bitcoin_data_last_360_days! - Verifique o seu MongoDB")
+        print("Informações adicionadas ao Collection bitcoin_data_last_30_days! - Verifique o seu MongoDB")
         return True
     else:
         print('Erro ao fazer a solicitação HTTP:', r.status_code)
@@ -58,7 +58,7 @@ def bitcoinLast360days():
 
 def main():
     bitcoin5years()
-    bitcoinLast360days()
+    bitcoinLast30days()
     return
 
 main()
