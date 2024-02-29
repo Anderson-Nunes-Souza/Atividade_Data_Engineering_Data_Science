@@ -30,7 +30,7 @@ Gráfico do tipo candlestick nos últimos 30 dias do Bitcoin. Utilize a figura 2
    Baixe o instalador do MongoDB Community Center do site oficial:
    https://www.mongodb.com/try/download/community
    
-   1.2 Inicie o MongoDB:
+   # 1.2 Inicie o MongoDB:
    Ubuntu / CentOS:
    O serviço deve ser iniciado automaticamente após a instalação. Você pode verificar o status com:
        ```sudo systemctl status mongodb ```
@@ -40,7 +40,7 @@ Gráfico do tipo candlestick nos últimos 30 dias do Bitcoin. Utilize a figura 2
     ```brew services start mongodb-community ```
 
    Windows:
-   Depois de instalar o MongoDB, ele deve estar em C:\Program Files\MongoDB\Server\{version}\bin. Abra o prompt de comando como administrador e navegue até este diretório. Em seguida, execute:
+   Depois de instalar o MongoDB, ele deve estar em ```"C:\Program Files\MongoDB\Server\{version}\bin". ``` Abra o prompt de comando como administrador e navegue até este diretório. Em seguida, execute:
     ```mongod ``` 
 
    Após executar o mongod, abrir o MongoDB Compass e conectar ao Localhost clicando em 'Save & Connect'
@@ -50,16 +50,12 @@ Gráfico do tipo candlestick nos últimos 30 dias do Bitcoin. Utilize a figura 2
 
    # 2 executar o ambiente
    Esse projeto contém as bibliotecas utilizadas já disponíveis na pasta myenv portanto deve funcionar sem a necessidade de realizar instalação dos módulos.
+   
    Na raiz do projeto, executar:
      ```.\myenv\Scripts\activate ```
 
    # 3 Executando o Projeto.
-   3.1 Acessar a raiz do projeto e executar o Script "coinMarketCall.py".
-   Ao ser executado, ele guardará as informações dentro do MongoDB:
-   ```$:> Informações adicionadas ao Collection bitcoin_data_last_5_years! - Verifique o seu MongoDB ```
-   ```$:> Informações adicionadas ao Collection bitcoin_data_last_360_days! - Verifique o seu MongoDB ```
-
-   3.2 Gerando os gráficos
+   3.1 Gerando os gráficos
    Na pasta raiz do projeto, executar o comando: 
      ``` jupyter notebook  ```
    
@@ -74,7 +70,7 @@ após executar o ambiente myenv
 
 1 - Instalação myenv para python
    rodar o comando 
-        ``` .\myenv\Scripts\activate     ``` 
+    ``` .\myenv\Scripts\activate``` 
 
 2 - realizar a instalação das bibliotecas: 
 Requests
